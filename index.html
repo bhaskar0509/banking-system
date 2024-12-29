@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <!-- Add CSS framework like Tailwind or Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .heading {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">Welcome to the Banking System</div>
+        <button class="btn btn-primary" onclick="navigateTo('addUser')">Add User</button>
+        <button class="btn btn-secondary" onclick="navigateTo('showUser')">Show User</button>
+        <button class="btn btn-success" onclick="navigateTo('login')">Login</button>
+        <button class="btn btn-danger" onclick="exitApp()">Exit</button>
+    </div>
+
+    <script>
+        function navigateTo(action) {
+            switch (action) {
+                case 'addUser':
+                    window.location.href = '/add_user'; // Replace with actual route
+                    break;
+                case 'showUser':
+                    window.location.href = '/show_user'; // Replace with actual route
+                    break;
+                case 'login':
+                    window.location.href = '/login'; // Replace with actual route
+                    break;
+            }
+        }
+
+        function exitApp() {
+            if (confirm('Are you sure you want to exit?')) {
+                window.close(); // May not work in modern browsers due to security restrictions
+                alert('Please close the browser window to exit.');
+            }
+        }
+    </script>
+</body>
+</html>
